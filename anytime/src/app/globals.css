@@ -1,0 +1,74 @@
+@import "tailwindcss";
+
+:root {
+  --font-heading: var(--font-heading);
+  --font-body: var(--font-body);
+}
+
+[data-theme="sophisticated"] {
+  --bg: #0a1628;
+  --bg-secondary: #0d1a30;
+  --bg-card: #1a2a4a;
+  --text: #c0c0c0;
+  --text-heading: #ffffff;
+  --accent: #d4af37;
+  --accent-hover: #e6c65a;
+}
+
+[data-theme="professional"] {
+  --bg: #1a1a1a;
+  --bg-secondary: #242424;
+  --bg-card: #2d2d2d;
+  --text: #b8b8b8;
+  --text-heading: #f0f0f0;
+  --accent: #2ecc71;
+  --accent-hover: #58d68d;
+}
+
+[data-theme="classic"] {
+  --bg: #fafafa;
+  --bg-secondary: #ffffff;
+  --bg-card: #ffffff;
+  --text: #444444;
+  --text-heading: #0d1f2d;
+  --accent: #b8860b;
+  --accent-hover: #d4a017;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-body), system-ui, sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading), system-ui, serif;
+  color: var(--text-heading);
+}
+
+.brand-text {
+  font-family: var(--font-heading), Georgia, serif;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+.nav-link {
+  font-family: var(--font-body), system-ui, sans-serif;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+}
+
+.body-text {
+  font-family: var(--font-body), system-ui, sans-serif;
+  line-height: 1.7;
+}
+
+@layer utilities {
+  .glowing-btn {
+    box-shadow: 0 0 20px rgba(var(--accent-rgb, 212, 175, 55), 0.5), 0 0 40px rgba(var(--accent-rgb, 212, 175, 55), 0.3);
+    transition: box-shadow 0.3s ease;
+  }
+  .glowing-btn:hover {
+    box-shadow: 0 0 30px rgba(var(--accent-rgb, 212, 175, 55), 0.7), 0 0 60px rgba(var(--accent-rgb, 212, 175, 55), 0.5);
+  }
+}
